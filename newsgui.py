@@ -70,7 +70,6 @@ class NewsApp:
             self.data['articles'][index]['url']))
 
         read.pack(side=LEFT)
-
         if index != len(self.data['articles'])-1:
             next = Button(frame, text='Next', width=23, height=3,command= lambda :self.load_news_items(
                 index+1))
