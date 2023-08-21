@@ -21,7 +21,7 @@ class NewsApp:
     def load_gui(self):
         self.root = Tk()
         self.root.geometry('500x500')
-        self.root.resizable(0,0)
+        self.root.resizable(0, 0)
         self.root.title('Parth News APP')
         self.root.configure(background='blue')
 
@@ -58,34 +58,31 @@ class NewsApp:
 
 #Details code
         details = Label(self.root, text=self.data['articles'][index]['description'], bg='black',
-                            fg='white',wraplength=350, justify='center')
+                            fg='white', wraplength=350, justify='center')
 
         details.pack(pady=(2, 30))
         details.config(font=('verdana'))
-
 
         frame = Frame(self.root, bg='blue')
         frame.pack(expand=True, fill=BOTH)
 
         if index != 0:
-            prev = Button(frame, text='prev', width=23, height=3,command=lambda :self.load_news_items(
+            prev = Button(frame, text='prev', width=23, height=3, command=lambda: self.load_news_items(
                 index-1))
             prev.pack(side=LEFT)
 
-        read = Button(frame, text='Read More', width=22, height=3,command=lambda :self.open_link(
+        read = Button(frame, text='Read More', width=22, height=3, command=lambda: self.open_link(
             self.data['articles'][index]['url']))
 
         read.pack(side=LEFT)
         if index != len(self.data['articles'])-1:
-            next = Button(frame, text='Next', width=23, height=3,command= lambda :self.load_news_items(
+            next = Button(frame, text='Next', width=23, height=3, command=lambda: self.load_news_items(
                 index+1))
             next.pack(side=LEFT)
 
-
         self.root.mainloop()
 
-
-    def open_link(self,url):
+    def open_link(self, url):
         webbrowser.open(url)
 
 
