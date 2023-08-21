@@ -21,6 +21,8 @@ class NewsApp:
     def load_gui(self):
         self.root = Tk()
         self.root.geometry('500x500')
+        self.root.resizable(0,0)
+        self.root.title('Parth News APP')
         self.root.configure(background='blue')
 
     def clear(self):
@@ -31,6 +33,7 @@ class NewsApp:
 
         self.clear()
 
+# Image part
         try:
             img_url = self.data['articles'][index]['urlToImage']
             raw_data = urlopen(img_url).read()
@@ -47,16 +50,19 @@ class NewsApp:
         label = Label(self.root, image=photo)
         label.pack()
 
+# Heading code
         heading = Label(self.root, text=self.data['articles'][index]['title'], bg='red', fg='white',
                         wraplength=350, justify='center')
         heading.pack(pady=(20, 30))
         heading.config(font=('verdana'))
 
+#Details code
         details = Label(self.root, text=self.data['articles'][index]['description'], bg='black',
-                        fg='white',wraplength=350, justify='center')
+                            fg='white',wraplength=350, justify='center')
 
         details.pack(pady=(2, 30))
         details.config(font=('verdana'))
+
 
         frame = Frame(self.root, bg='blue')
         frame.pack(expand=True, fill=BOTH)
