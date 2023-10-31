@@ -87,4 +87,7 @@ class NewsApp:
 
 
 obj = NewsApp()
+class Fan()
+    def __init__(self):
+
 
