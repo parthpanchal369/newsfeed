@@ -54,7 +54,7 @@ class NewsApp:
         heading = Label(self.root, text=self.data['articles'][index]['title'], bg='red', fg='white',
                         wraplength=350, justify='center')
         heading.pack(pady=(20, 30))
-        heading.config(font=('verdana'))
+        heading.config(font='verdana')
 
 #Details code
         details = Label(self.root, text=self.data['articles'][index]['description'], bg='black',
@@ -87,3 +87,4 @@ class NewsApp:
 
 
 obj = NewsApp()
+
